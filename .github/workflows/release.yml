@@ -51,6 +51,7 @@ jobs:
             host-os: 'ubuntu-latest'
           - platform: 'darwin-x64'
             host-os: 'macos-latest'
+            architecture: x64
           - pair: 'node:10'
             language: 'node'
             version: '10'
@@ -77,6 +78,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.version }}
+        architecture: ${{ matrix.architecture }}
     - name: Build adapter
       run: |
         ./build.sh "${{ matrix.platform }}" "${{ matrix.language }}" "${{ matrix.version }}"
