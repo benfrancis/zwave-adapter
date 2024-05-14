@@ -35,7 +35,6 @@ jobs:
           'linux-arm',
           'linux-arm64',
           'linux-x64',
-          'darwin-x64',
         ]
         pair: [
           'node:10',
@@ -49,9 +48,6 @@ jobs:
             host-os: 'ubuntu-latest'
           - platform: 'linux-x64'
             host-os: 'ubuntu-latest'
-          - platform: 'darwin-x64'
-            host-os: 'macos-latest'
-            architecture: 'x64'
           - pair: 'node:10'
             language: 'node'
             version: '10'
@@ -78,7 +74,6 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.version }}
-        architecture: ${{ matrix.architecture }}
     - name: Build adapter
       run: |
         ./build.sh "${{ matrix.platform }}" "${{ matrix.language }}" "${{ matrix.version }}"
