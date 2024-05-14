@@ -51,7 +51,7 @@ jobs:
             host-os: 'ubuntu-latest'
           - platform: 'darwin-x64'
             host-os: 'macos-latest'
-            architecture: x64
+            architecture: 'x64'
           - pair: 'node:10'
             language: 'node'
             version: '10'
